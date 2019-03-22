@@ -1,0 +1,1389 @@
+var schema_Module_Factory = function () {
+  var schema = {
+    name: 'schema',
+    defaultElementNamespaceURI: 'urn:healthit-gov:qdm:v5_4',
+    typeInfos: [{
+        localName: 'DateInterval',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'DateInterval'
+        },
+        baseTypeInfo: '.Interval',
+        propertyInfos: [{
+            name: 'low',
+            elementName: {
+              localPart: 'low',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Date'
+          }, {
+            name: 'high',
+            elementName: {
+              localPart: 'high',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Date'
+          }]
+      }, {
+        localName: 'DiagnosticStudyRecommended',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'EncounterPerformed',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'admissionSource',
+            required: true,
+            typeInfo: '.Code'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'dischargeDisposition',
+            typeInfo: '.Code'
+          }, {
+            name: 'diagnosis',
+            minOccurs: 0,
+            collection: true,
+            typeInfo: '.Code'
+          }, {
+            name: 'facilityLocation',
+            minOccurs: 0,
+            collection: true,
+            typeInfo: '.FacilityLocation'
+          }, {
+            name: 'principalDiagnosis',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }, {
+            name: 'lengthOfStay',
+            typeInfo: '.Quantity'
+          }]
+      }, {
+        localName: 'IntegerInterval',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'IntegerInterval'
+        },
+        baseTypeInfo: '.Interval',
+        propertyInfos: [{
+            name: 'low',
+            elementName: {
+              localPart: 'low',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Integer'
+          }, {
+            name: 'high',
+            elementName: {
+              localPart: 'high',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Integer'
+          }]
+      }, {
+        localName: 'SubstanceAdministered',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'dosage',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'frequency',
+            typeInfo: '.Code'
+          }, {
+            name: 'route',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'MedicationDispensed',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'refills',
+            typeInfo: 'Integer'
+          }, {
+            name: 'dosage',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'supply',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'frequency',
+            typeInfo: '.Code'
+          }, {
+            name: 'daysSupplied',
+            typeInfo: '.Integer'
+          }, {
+            name: 'route',
+            typeInfo: '.Code'
+          }, {
+            name: 'prescriberId',
+            typeInfo: '.Id'
+          }, {
+            name: 'dispenserId',
+            typeInfo: '.Id'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'AssessmentOrder',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'Boolean',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'Boolean'
+        },
+        baseTypeInfo: '.Any',
+        propertyInfos: [{
+            name: 'value',
+            required: true,
+            typeInfo: 'Boolean',
+            attributeName: {
+              localPart: 'value'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'FacilityLocation',
+        propertyInfos: [{
+            name: 'code',
+            required: true,
+            typeInfo: '.Code'
+          }, {
+            name: 'locationPeriod',
+            typeInfo: '.DateTimeInterval'
+          }]
+      }, {
+        localName: 'ImmunizationAdministered',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'dosage',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'route',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'InterventionRecommended',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'ProcedureOrder',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'anatomicalLocationSite',
+            typeInfo: '.Code'
+          }, {
+            name: 'ordinality',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'Code',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'Code'
+        },
+        baseTypeInfo: '.Any',
+        propertyInfos: [{
+            name: 'code',
+            required: true,
+            elementName: {
+              localPart: 'code',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.String'
+          }, {
+            name: 'display',
+            elementName: {
+              localPart: 'display',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.String'
+          }, {
+            name: 'system',
+            elementName: {
+              localPart: 'system',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.String'
+          }, {
+            name: 'version',
+            elementName: {
+              localPart: 'version',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.String'
+          }]
+      }, {
+        localName: 'Quantity',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'Quantity'
+        },
+        baseTypeInfo: '.Any',
+        propertyInfos: [{
+            name: 'value',
+            required: true,
+            elementName: {
+              localPart: 'value',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Decimal'
+          }, {
+            name: 'unit',
+            elementName: {
+              localPart: 'unit',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.String'
+          }]
+      }, {
+        localName: 'ProviderCharacteristic',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }]
+      }, {
+        localName: 'Date',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'Date'
+        },
+        baseTypeInfo: '.Any',
+        propertyInfos: [{
+            name: 'value',
+            required: true,
+            attributeName: {
+              localPart: 'value'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'DeviceApplied',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'anatomicalLocationSite',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'LaboratoryTestRecommended',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'PhysicalExamPerformed',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'method',
+            typeInfo: '.Code'
+          }, {
+            name: 'result',
+            typeInfo: '.Any'
+          }, {
+            name: 'anatomicalLocationSite',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }, {
+            name: 'component',
+            minOccurs: 0,
+            collection: true,
+            typeInfo: '.Component'
+          }]
+      }, {
+        localName: 'DeviceOrder',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'LaboratoryTestPerformed',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'status',
+            typeInfo: '.Code'
+          }, {
+            name: 'method',
+            typeInfo: '.Code'
+          }, {
+            name: 'result',
+            typeInfo: '.Any'
+          }, {
+            name: 'resultDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'referenceRange',
+            typeInfo: '.QuantityInterval'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }, {
+            name: 'component',
+            minOccurs: 0,
+            collection: true,
+            typeInfo: '.Component'
+          }]
+      }, {
+        localName: 'Time',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'Time'
+        },
+        baseTypeInfo: '.Any',
+        propertyInfos: [{
+            name: 'value',
+            attributeName: {
+              localPart: 'value'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'TimeInterval',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'TimeInterval'
+        },
+        baseTypeInfo: '.Interval',
+        propertyInfos: [{
+            name: 'low',
+            elementName: {
+              localPart: 'low',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Time'
+          }, {
+            name: 'high',
+            elementName: {
+              localPart: 'high',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Time'
+          }]
+      }, {
+        localName: 'PatientCharacteristic',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }]
+      }, {
+        localName: 'PatientCharacteristicRace',
+        baseTypeInfo: '.QDMBaseType'
+      }, {
+        localName: 'Any',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'Any'
+        }
+      }, {
+        localName: 'PatientCharacteristicClinicalTrialParticipant',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }]
+      }, {
+        localName: 'ProviderCareExperience',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }]
+      }, {
+        localName: 'EncounterRecommended',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'facilityLocation',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'CommunicationPerformed',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'category',
+            typeInfo: '.Code'
+          }, {
+            name: 'medium',
+            typeInfo: '.Code'
+          }, {
+            name: 'sender',
+            typeInfo: '.Code'
+          }, {
+            name: 'recipient',
+            typeInfo: '.Code'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }, {
+            name: 'relatedTo',
+            minOccurs: 0,
+            collection: true,
+            typeInfo: '.Id'
+          }]
+      }, {
+        localName: 'Diagnosis',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'prevalencePeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'anatomicalLocationSite',
+            typeInfo: '.Code'
+          }, {
+            name: 'severity',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'PhysicalExamRecommended',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'anatomicalLocationSite',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'LaboratoryTestOrder',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'MedicationActive',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'dosage',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'frequency',
+            typeInfo: '.Code'
+          }, {
+            name: 'route',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'MedicationDischarge',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'refills',
+            typeInfo: 'Integer'
+          }, {
+            name: 'dosage',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'supply',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'frequency',
+            typeInfo: '.Code'
+          }, {
+            name: 'daysSupplied',
+            typeInfo: '.Integer'
+          }, {
+            name: 'route',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'Participation',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'participationPeriod',
+            typeInfo: '.DateTimeInterval'
+          }]
+      }, {
+        localName: 'Ratio',
+        propertyInfos: [{
+            name: 'numerator',
+            required: true,
+            typeInfo: '.Quantity'
+          }, {
+            name: 'denominator',
+            required: true,
+            typeInfo: '.Quantity'
+          }]
+      }, {
+        localName: 'PatientCharacteristicPayer',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }]
+      }, {
+        localName: 'PatientCharacteristicSex',
+        baseTypeInfo: '.QDMBaseType'
+      }, {
+        localName: 'QuantityInterval',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'QuantityInterval'
+        },
+        baseTypeInfo: '.Interval',
+        propertyInfos: [{
+            name: 'low',
+            elementName: {
+              localPart: 'low',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Quantity'
+          }, {
+            name: 'high',
+            elementName: {
+              localPart: 'high',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Quantity'
+          }]
+      }, {
+        localName: 'InterventionPerformed',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'result',
+            typeInfo: '.Any'
+          }, {
+            name: 'status',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'DiagnosticStudyOrder',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'FamilyHistory',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'relationship',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'Id',
+        propertyInfos: [{
+            name: 'namingSystem',
+            typeInfo: '.String'
+          }, {
+            name: 'value',
+            required: true,
+            typeInfo: '.String'
+          }]
+      }, {
+        localName: 'PatientCharacteristicBirthdate',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'birthDatetime',
+            typeInfo: '.DateTime'
+          }]
+      }, {
+        localName: 'AllergyIntolerance',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'prevalencePeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'type',
+            typeInfo: '.Code'
+          }, {
+            name: 'severity',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'DeviceRecommended',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'SubstanceOrder',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'dosage',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'supply',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'frequency',
+            typeInfo: '.Code'
+          }, {
+            name: 'refills',
+            typeInfo: 'Integer'
+          }, {
+            name: 'route',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'Ratio',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'Ratio'
+        },
+        baseTypeInfo: '.Any',
+        propertyInfos: [{
+            name: 'numerator',
+            required: true,
+            elementName: {
+              localPart: 'numerator',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Quantity'
+          }, {
+            name: 'denominator',
+            required: true,
+            elementName: {
+              localPart: 'denominator',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Quantity'
+          }]
+      }, {
+        localName: 'AssessmentPerformed',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'method',
+            typeInfo: '.Code'
+          }, {
+            name: 'result',
+            typeInfo: '.Any'
+          }, {
+            name: 'component',
+            minOccurs: 0,
+            collection: true,
+            typeInfo: '.Component'
+          }, {
+            name: 'relatedTo',
+            minOccurs: 0,
+            collection: true,
+            typeInfo: '.Id'
+          }]
+      }, {
+        localName: 'EncounterOrder',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'facilityLocation',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'Integer',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'Integer'
+        },
+        baseTypeInfo: '.Any',
+        propertyInfos: [{
+            name: 'value',
+            required: true,
+            typeInfo: 'Int',
+            attributeName: {
+              localPart: 'value'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'ProcedurePerformed',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'method',
+            typeInfo: '.Code'
+          }, {
+            name: 'result',
+            typeInfo: '.Any'
+          }, {
+            name: 'status',
+            typeInfo: '.Code'
+          }, {
+            name: 'anatomicalLocationSite',
+            typeInfo: '.Code'
+          }, {
+            name: 'ordinality',
+            typeInfo: '.Code'
+          }, {
+            name: 'incisionDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }, {
+            name: 'component',
+            minOccurs: 0,
+            collection: true,
+            typeInfo: '.Component'
+          }]
+      }, {
+        localName: 'DiagnosticStudyPerformed',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'result',
+            typeInfo: '.Any'
+          }, {
+            name: 'resultDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'status',
+            typeInfo: '.Code'
+          }, {
+            name: 'method',
+            typeInfo: '.Code'
+          }, {
+            name: 'facilityLocation',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }, {
+            name: 'component',
+            minOccurs: 0,
+            collection: true,
+            typeInfo: '.Component'
+          }]
+      }, {
+        localName: 'DateTime',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'DateTime'
+        },
+        baseTypeInfo: '.Any',
+        propertyInfos: [{
+            name: 'value',
+            required: true,
+            attributeName: {
+              localPart: 'value'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'PatientCharacteristicEthnicity',
+        baseTypeInfo: '.QDMBaseType'
+      }, {
+        localName: 'AssessmentRecommended',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'PhysicalExamOrder',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'anatomicalLocationSite',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'Component',
+        propertyInfos: [{
+            name: 'code',
+            required: true,
+            typeInfo: '.Code'
+          }, {
+            name: 'result',
+            typeInfo: '.Any'
+          }]
+      }, {
+        localName: 'CareGoal',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'relatedTo',
+            minOccurs: 0,
+            collection: true,
+            typeInfo: '.Id'
+          }, {
+            name: 'targetOutcome',
+            typeInfo: '.Any'
+          }]
+      }, {
+        localName: 'ProcedureRecommended',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'anatomicalLocationSite',
+            typeInfo: '.Code'
+          }, {
+            name: 'ordinality',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'MedicationAdministered',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'dosage',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'frequency',
+            typeInfo: '.Code'
+          }, {
+            name: 'route',
+            typeInfo: '.Code'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'SubstanceRecommended',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'dosage',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'frequency',
+            typeInfo: '.Code'
+          }, {
+            name: 'refills',
+            typeInfo: 'Integer'
+          }, {
+            name: 'route',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'Symptom',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'prevalencePeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'severity',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'String',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'String'
+        },
+        baseTypeInfo: '.Any',
+        propertyInfos: [{
+            name: 'value',
+            required: true,
+            attributeName: {
+              localPart: 'value'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'DecimalInterval',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'DecimalInterval'
+        },
+        baseTypeInfo: '.Interval',
+        propertyInfos: [{
+            name: 'low',
+            elementName: {
+              localPart: 'low',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Decimal'
+          }, {
+            name: 'high',
+            elementName: {
+              localPart: 'high',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Decimal'
+          }]
+      }, {
+        localName: 'MedicationOrder',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            required: true,
+            typeInfo: '.DateTime'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'refills',
+            typeInfo: 'Integer'
+          }, {
+            name: 'dosage',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'supply',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'frequency',
+            typeInfo: '.Code'
+          }, {
+            name: 'daysSupplied',
+            typeInfo: '.Integer'
+          }, {
+            name: 'route',
+            typeInfo: '.Code'
+          }, {
+            name: 'setting',
+            typeInfo: '.Code'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'prescriberId',
+            typeInfo: '.Id'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'Decimal',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'Decimal'
+        },
+        baseTypeInfo: '.Any',
+        propertyInfos: [{
+            name: 'value',
+            required: true,
+            typeInfo: 'Decimal',
+            attributeName: {
+              localPart: 'value'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'DateTimeInterval',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'DateTimeInterval'
+        },
+        baseTypeInfo: '.Interval',
+        propertyInfos: [{
+            name: 'low',
+            elementName: {
+              localPart: 'low',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.DateTime'
+          }, {
+            name: 'high',
+            elementName: {
+              localPart: 'high',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.DateTime'
+          }]
+      }, {
+        localName: 'Interval',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'Interval'
+        },
+        baseTypeInfo: '.Any',
+        propertyInfos: [{
+            name: 'lowClosed',
+            elementName: {
+              localPart: 'lowClosed',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Boolean'
+          }, {
+            name: 'highClosed',
+            elementName: {
+              localPart: 'highClosed',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Boolean'
+          }]
+      }, {
+        localName: 'PatientCareExperience',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }]
+      }, {
+        localName: 'ImmunizationOrder',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'activeDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'dosage',
+            typeInfo: '.Quantity'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'route',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'PatientCharacteristicExpired',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'expiredDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'cause',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'QDMBaseType',
+        propertyInfos: [{
+            name: 'id',
+            required: true,
+            typeInfo: '.Id'
+          }, {
+            name: 'code',
+            required: true,
+            typeInfo: '.Code'
+          }, {
+            name: 'patientId',
+            required: true,
+            typeInfo: '.Id'
+          }, {
+            name: 'reporter',
+            typeInfo: '.Id'
+          }, {
+            name: 'recorder',
+            typeInfo: '.Id'
+          }]
+      }, {
+        localName: 'AdverseEvent',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'relevantPeriod',
+            typeInfo: '.DateTimeInterval'
+          }, {
+            name: 'severity',
+            typeInfo: '.Code'
+          }, {
+            name: 'facilityLocation',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'InterventionOrder',
+        baseTypeInfo: '.QDMBaseType',
+        propertyInfos: [{
+            name: 'authorDatetime',
+            typeInfo: '.DateTime'
+          }, {
+            name: 'reason',
+            typeInfo: '.Code'
+          }, {
+            name: 'negationRationale',
+            typeInfo: '.Code'
+          }]
+      }, {
+        localName: 'Concept',
+        typeName: {
+          namespaceURI: 'urn:hl7-org:elm-types:r1',
+          localPart: 'Concept'
+        },
+        propertyInfos: [{
+            name: 'codes',
+            required: true,
+            collection: true,
+            elementName: {
+              localPart: 'codes',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.Code'
+          }, {
+            name: 'display',
+            elementName: {
+              localPart: 'display',
+              namespaceURI: 'urn:hl7-org:elm-types:r1'
+            },
+            typeInfo: '.String'
+          }]
+      }],
+    elementInfos: []
+  };
+  return {
+    schema: schema
+  };
+};
+if (typeof define === 'function' && define.amd) {
+  define([], schema_Module_Factory);
+}
+else {
+  var schema_Module = schema_Module_Factory();
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports.schema = schema_Module.schema;
+  }
+  else {
+    var schema = schema_Module.schema;
+  }
+}

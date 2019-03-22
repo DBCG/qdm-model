@@ -1,0 +1,16 @@
+{
+  "name": "qdm-model",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "qdm-schema": "1.0.0",
+    "json-schema-to-typescript" : "latest"
+  },
+  "scripts": {
+      "prepublish" : "json2ts ../node_modules/qdm-schema/lib/schema.jsonschema lib/qdm.d.ts --unreachableDefinitions"
+  },
+  "private": true
+}

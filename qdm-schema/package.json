@@ -1,0 +1,15 @@
+{
+  "name": "qdm-schema",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "jsonix-schema-compiler": "latest"
+  },
+  "scripts": {
+      "prepublish" : "java -jar ../node_modules/jsonix-schema-compiler/lib/jsonix-schema-compiler-full.jar  -generateJsonSchema -nv -p schema -d lib ./xsd/qdm.5.4.xsd"
+  },
+  "private": true
+}
